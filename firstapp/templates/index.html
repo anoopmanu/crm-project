@@ -1,15 +1,255 @@
-{% extends 'navbar.html' %}
-{% block content %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    
+    <link rel="stylesheet" href="style.css" />
+    <title>oodo</title>
+    <style>
+    
+      body {
+        background-image: url("");
+        background-color: rgb(229, 250, 255);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .text-effect {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      color: #333;
+      transition: color 0.3s ease; /* Smooth transition for color change */
+    }
 
-<body style="text-align: center; justify-content: center;">
-   
-    <div class="container text-center mt-5">
-  <h1 class="display-4">Sales teams <br>
-    from good to great</h1>
-  <!-- Add any additional content here if needed -->
+    /* Define the hover effect */
+    .text-effect:hover {
+      color: #ff5733; /* Change the text color on hover */
+    }
+      .jumbotron {
+            background-color:white;
+            color: #6b1b6c;
+            padding: 100px 25px;
+            margin-bottom: 0;
+        }
+
+        .search-box {
+            margin-top: 50px;
+        }
+        
+</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"></a>
+      <img src="https://cdn.worldvectorlogo.com/logos/odoo.svg" style="height: 70px; width: 70px;" alt="Logo">
+     
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item ">
+                  <a class="nav-link" href="{#}"> </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link"  href="{#}"></a>
+
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{#}">Sign in</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{}"></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"></a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+
+<div class="jumbotron text-center">
+  <h1 class="display-4"><b><i>Sales teams 
+    from good to great</i></b></h1><br>
+  <p class="lead" style="color: rgb(142, 16, 137);"><b>Odoo CRM is the true customer-centric tool for your sales needs.</b> </p>
+ <br>
+  <p style="color: rgb(120, 13, 122);">Track leads, get accurate forecasts, and focus on what matters: closing opportunities.</p>
+ 
+ 
+</div>
+<br>
+<br>
+  <div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Responsive Image -->
+            <img src="https://odoocdn.com/openerp_website/static/src/img/apps/crm/hero_image.webp" style="height: 450px; width: 650px;"  class="img-fluid" alt="Responsive Image">
+        </div>
+        <div class="col-lg-4">
+            <!-- Image Description -->
+            <h2>Keep opportunities within view</h2>
+            <br>
+            <h4>Your pipeline at a glance.</h4>
+            <p>
+              Each opportunity is listed as a card with all the essential information; and each stage gives an overview of your expected revenues.
+            </p>
+
+            <h4>Efficient organization</h4>
+            <p>
+              The Kanban view organizes opportunities by stage. Drag and drop them on the pipeline to move them from a stage
+            </p>
+        </div>
+       
+    </div>
+</div>
+<br>
+<h1 class="display-4"><b><i>All The Features<br>Done Right 
+  </i></b></h1><br>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Enable automation</h5>
+        <p class="card-text">Automate lead creation, team assignment, scheduled activities,<br> and focus on what really matters.</p>
+       
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">AI lead scoring</h5>
+        <p class="card-text">Too many leads? Our AI scores leads to ensure<br> you always work on the right priorities.
+
+        </p>
+       
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Reduce manual entry</h5>
+        <p class="card-text">Send quotes in just a few clicks, manage your<br> pipeline by drag-and-dropping, and more.</p>
+        
+      </div>
+    </div>
+  </div>
 </div>
 
 
 
-{% endblock %}
+
+
+<br>
+<br>
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-muted bg-dark">
+  <h1 style="color: white;">odoo</h1>
+    <!-- Section: Links  -->
+    <section class="">
+     
+      <div class="container text-center text-md-start pt-4 pb-4">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-12 col-lg-3 col-sm-12 mb-2">
+            <!-- Content -->
+            <a href="https://mdbootstrap.com/" target="_blank" class="text-white h2">
+           
+            </a>
+            <p class="mt-1 text-white">
+              Odoo is a suite of open source business apps that cover all your company needs: CRM, eCommerce, accounting, inventory, point of sale, project management, etc.
+               </p>
+            <p class="mt-1 text-white">
+              Odoo's unique value proposition is to be at the same time very easy to use and fully integrated.
+            </p>
+           
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-6 col-sm-4 col-lg-2">
+            <!-- Links -->
+            <h6 class="text-uppercase text-white fw-bold mb-2">
+              Quick Links
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li><a class="text-white-50" href="#">Home</a></li>
+              <li><a class="text-white-50" href="#">Jobs</a></li>
+              <li><a class="text-white-50" href="#">Services</a></li>
+              <li><a class="text-white-50" href="#">About Us</a></li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-6 col-sm-4 col-lg-2">
+            <!-- Links -->
+            <h6 class="text-uppercase text-white fw-bold mb-2">
+              My Account
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li><a class="text-white-50" href="#">Login</a></li>
+              <li><a class="text-white-50" href="#">Register</a></li>
+              <li><a class="text-white-50" href="#">Search Jobs</a></li>
+              <li><a class="text-white-50" href="#">Profile</a></li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-6 col-sm-4 col-lg-2">
+            <!-- Links -->
+            <h6 class="text-uppercase text-white fw-bold mb-2">
+              Help
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li><a class="text-white-50" href="#">FAQ</a></li>
+              <li><a class="text-white-50" href="#">Contact Us</a></li>
+              <li><a class="text-white-50" href="#">Shipping Info</a></li>
+              <li><a class="text-white-50" href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-2">
+            <!-- Links -->
+            <h6 class="text-uppercase text-white fw-bold mb-2">
+              About us
+            </h6>
+            <ul class="list-unstyled mb-4">
+              <li><a class="text-white-50" href="#">Our company</a></li>
+              <li><a class="text-white-50" href="#">Brand Assets</a></li>
+              <li><a class="text-white-50" href="#">Contact us</a></li>
+              <li><a class="text-white-50" href="#">Jobs</a></li>
+            </ul>
+          </div>
+          <!-- Grid column -->
+    
+         
+    <!-- Section: Links  -->   
+        </div>
+      </div>
+    </div>
+    </footer>
+    
+
+  
+
+</body>
+</html>
+    
+   
+    
+    
