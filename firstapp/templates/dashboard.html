@@ -1,135 +1,124 @@
 {% extends 'sidenav.html' %}
 {% block content %}
-<style>
-    /* Webpixels CSS */
-/* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
-/* URL: https://github.com/webpixels/css */
 
-@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/274ee977b7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    {% load static %}
+  
+    <br>
+    <style>
+          body {
+      background-color: rgb(229, 250, 255);
+  padding: 20px;
+}
+      
 
-/* Bootstrap Icons */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
-
-li {
-    padding: 0 !important;
-}
-li .wrapper {
-    display: block;
-    height: 100%;
-    width: auto;
-    position: relative;
-    -webkit-transition: -webkit-transform 300ms ease;
-    -moz-transition: -moz-transform 300ms ease;
-    transition: transform 300ms ease;
-}
-.wrapper .go, .wrapper .item, .wrapper .del {
-    display: inline-block;
-    padding: 0.9em;
-    text-shadow: none;
-    border-style: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-.wrapper .item {
-    width: 100%;
-    height: 100%;
-}
-.wrapper .go, .wrapper .del {
-    height: 100%;
-    text-align:center;
-    font-weight: bold;
-    border-width: 1px 0;
-    border-style: solid;
-    border-color: #ddd;
-}
-.wrapper .go {
-    background: #009925;
-    border-color: #009925;
-}
-.wrapper .del {
-    background: #F90101;
-    border-color: #F90101;
-}
-
-</style>
-<script>
-    $.fn.extend({
-    createBtn: function () {
-        var elmWidth = $("li", $(this)).width(),
-            listType = $(this).listview("option", "inset") ? true : false,
-            btnWidth = elmWidth < 300 && listType ? "35%" : elmWidth > 300 && !listType ? "25%" : "20%";
-        $("li", $(this)).each(function () {
-            var text = $(this).html();
-            $(this).html($("<div/>", {
-                class: "wrapper"
-            }).append($("<div/>", {
-                class: "go"
-            }).text("Save").width(btnWidth)).append($("<div/>", {
-                class: "item"
-            }).text(text)).append($("<div/>", {
-                class: "del"
-            }).text("Delete").width(btnWidth)).css({
-                left: "-" + btnWidth
-            }).on("swipeleft swiperight vclick tap", function (e) {
-
-                $(this).revealBtn(e, btnWidth);
-            }) /**/ );
-        });
-    },
-    revealBtn: function (e, x) {
-        var check = this.check(x),
-            swipe = e.type;
-        if (check == "closed") {
-            swipe == "swiperight" ? this.open(e, x, "left") : swipe == "swipeleft" ? this.open(e, x, "right") : setTimeout(function () {
-                this.close(e);
-            }, 0);
-            e.stopImmediatePropagation();
+        .card-container {
+        perspective: 1000px;
         }
-        if (check == "right" || check == "left") {
-            swipe == "swiperight" ? this.open(e, "left") : swipe == "swipeleft" ? this.open(e, x, "right") : setTimeout(function () {
-                this.close(e);
-            }, 0);
-            e.stopImmediatePropagation();
+
+        .card {
+            height: 150px;
+            width: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+          
+           
         }
-        if (check !== "closed" && e.isImmediatePropagationStopped() && (swipe == "vclick" || swipe == "tap")) {
-            this.close(e);
+
+       
+
+        .card .side {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
         }
-    },
-    close: function (e) {
-        var check = this.check();
-        this.css({
-            transform: "translateX(0)"
-        });
-    },
-    open: function (e, x, dir) {
-        var posX = dir == "left" ? x : "-" + x;
-        $(this).css({
-            transform: "translateX(" + posX + ")"
-        });
-    },
-    check: function (x) {
-        var matrix = this.css("transform").split(" "),
-            posY = parseInt(matrix[matrix.length - 2], 10),
-            btnW = (this.width() * parseInt(x) / 100) / 1.1;
-        return isNaN(posY) ? "closed" : posY >= btnW ? "left" : posY <= "-" + btnW ? "right" : "closed";
+
+        .card .front {
+            transform: rotateY(0deg); /* Ensure the front side is visible initially */
+            display: flex;
+        }
+
+      
+
+        .popup {
+          display: none;
+          position: fixed;
+          top: 75%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #f9f5f5;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          z-index: 9999;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+       
+      .table thead th,
+.table tbody td {
+  text-align: center; /* Adjust alignment as needed */
+}
+.table thead th {
+  background-color: #090909; /* Blue color, change as needed */
+  color: #fff; /* Text color, change as needed */
+}
+
+/* For table body alternating rows */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #ffffff; /* Light gray color, change as needed */
+}
+
+/* For table body text color */
+.table tbody td {
+  color: #333; /* Dark text color, change as needed */
+}
+.card {
+      margin-bottom: 20px;
     }
-});
 
-$(document).on("pagecreate", function () {
-    $("ul").createBtn();
-});
-</script>
-<!-- Banner -->
+    @media (min-width: 768px) {
+      .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+      }
+    }
+    .card-img-top {
+      width: 100%;
+      height: auto;
+    }
 
 
-<!-- Dashboard -->
+
+
+    </style>
+</head>
+
+<body>
+  <!-- Dashboard -->
 
     <!-- Vertical Navbar -->
    
     <!-- Main content -->
-    <br>
-    <br>
+  
     <br>
     <div class="h-screen flex-grow-1 overflow-y-lg-auto">
         <!-- Header -->
@@ -139,6 +128,8 @@ $(document).on("pagecreate", function () {
                     <div class="row align-items-center">
                         <div class="col-sm-6 col-12 mb-4 mb-sm-0">
                             <!-- Title -->
+                            <br>
+                            <br>
                             <h1 class="h2 mb-0 ls-tight">Dashboard</h1>
                         </div>
                         <!-- Actions -->
@@ -174,202 +165,342 @@ $(document).on("pagecreate", function () {
                 </div>
             </div>
         </header>
+        <br>
+        <br>
+        <div class="container mt-4">
+          <div class="row">
+          
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://www.scnsoft.com/blog-pictures/crm-pics/top-crm-market-statistics_02-customer-engagement-platforms.png" style="height: 150px; width: 250px;" class="card-img-top" alt="Image">
+                <div class="card-body">
+                 
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://www.superoffice.com/globalassets/blog/2014/3/crm-software-revenue-forecast-2017.png" style="height: 150px; width: 250px;" class="card-img-top" alt="Image">
+                <div class="card-body">
+                 
+                </div>
+              </div>
+            </div>
+           
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://www.superoffice.com/globalassets/blog/2014/3/most-important-crm-feature-2017.png" style="height: 150px; width: 250px;" class="card-img-top" alt="Image">
+                <div class="card-body">
+                 
+                </div>
+              </div>
+            </div>
+            
+            <!-- Add more card elements as needed -->
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Image -->
+              <img src="https://knowledge.carolina.com/wp-content/uploads/2021/08/graph_3068300.jpg" style="height: 300px; width: 400px;" class="img-fluid" alt="Your Image"><br>
+             
+            </div>
+            <div class="col-md-6">
+              <img src="https://www.slideteam.net/wp/wp-content/uploads/2016/08/cONSTRUCTION-dASHBOARD.png" style="height: 300px; width: 400px;" class="img-fluid" alt="Your Image">
+             
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <br>
+      
+        <br>
+      
+        <!-- Bootstrap JS (optional, if you need dropdowns, modals, etc.) -->
+       
+      
         <main class="py-6 bg-surface-secondary">
             <div class="container-fluid">
+              
                 <!-- Card stats -->
-                <div class="row g-6 mb-6">
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Budget</span>
-                                        <span class="h3 font-bold mb-0">$750.90</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
-                                            <i class="bi bi-credit-card"></i>
-                                        </div>
-                                    </div>
+               
+                <div class="container mt-3 mb-3 pt-1">
+                  <h1 class="text-center mt-3 mb-3 display-4"><u></u></h1>
+                  <div class="row">
+                    
+                    {% if '1' not in dashboard %}
+                    <div class="col-sm-3 mb-3">
+                      <div id="draggable1" class="card" draggable="true" >
+                        <div class="side front" >
+                          <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                  
+                                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">Work load</span>
+                                    <span class="h3 font-bold mb-0">95%</span>
                                 </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-success text-success me-2">
-                                        <i class="bi bi-arrow-up me-1"></i>13%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">Since last month</span>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
+                                        <i class="bi bi-minecart-loaded"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">New projects</span>
-                                        <span class="h3 font-bold mb-0">215</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
-                                            <i class="bi bi-people"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-success text-success me-2">
-                                        <i class="bi bi-arrow-up me-1"></i>30%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">Since last month</span>
-                                </div>
+                            <div class="mt-2 mb-0 text-sm">
+                                <span class="badge badge-pill bg-soft-success text-success me-2">
+                                    <i class="bi bi-arrow-up me-1"></i>10%
+                                </span>
+                                <span class="text-nowrap text-xs text-muted">Since last month</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total hours</span>
-                                        <span class="h3 font-bold mb-0">1.400</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
-                                            <i class="bi bi-clock-history"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                                        <i class="bi bi-arrow-down me-1"></i>-5%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">Since last month</span>
-                                </div>
-                            </div>
+                   
+                     
                         </div>
+                       
+                      </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card shadow border-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <span class="h6 font-semibold text-muted text-sm d-block mb-2">Work load</span>
-                                        <span class="h3 font-bold mb-0">95%</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
-                                            <i class="bi bi-minecart-loaded"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-2 mb-0 text-sm">
-                                    <span class="badge badge-pill bg-soft-success text-success me-2">
-                                        <i class="bi bi-arrow-up me-1"></i>10%
-                                    </span>
-                                    <span class="text-nowrap text-xs text-muted">Since last month</span>
-                                </div>
-                            </div>
+                    {% endif %}
+                    
+            
+            
+                    {% if '2' not in dashboard %}
+                    <div class="col-sm-3 mb-3">
+                      <div id="draggable2" class="card" draggable="true" >
+                        <div class="side front">
+                        <div class="card-body">
+                          <h5 class="text-center">New project</h5>
+                          <h6 class="text-center">215</h6>
+                          <h6 class="text-center">since last month</h6>
+                        
                         </div>
+                        </div>
+                        
+                      </div>
                     </div>
+                    {% endif %}
+            
+                    {% if '3' not in dashboard %}
+                    <div class="col-sm-3 mb-3">
+                      <div id="draggable3" class="card" draggable="true">
+                        <div class="side front">
+                        <div class="card-body">
+                          <h5 class="text-center">Total hours</h5>
+                          <h6 class="text-center">1.400</h6>
+                          <h6 class="text-center">since last month</h6>
+                        
+                        </div>
+                        </div>
+                       
+                      </div>
+                    </div>
+                    {% endif %}
+            
+            
+                    {% if '4' not in dashboard %}
+                  <div class="col-sm-3 mb-3">
+                    <div id="draggable4" class="card" draggable="true">
+                      <div class="side front">
+                      <div class="card-body">
+                        <h5 class="text-center">Budget</h5>
+                        <h6 class="text-center">Price : ₹750</h6>
+                        <h6 class="text-center">since last month</h6>
+                    
+                      </div>
+                      </div>
+                    
+                  </div>
+                  {% endif %} 
+                  </div>
                 </div>
-                <div class="card shadow border-0 mb-7">
-                    <div class="card-header">
-                        <h5 class="mb-0">Applications</h5>
-                    </div>
+          
+          
+                <!-- Add a pop-up element -->
+                <div id="popup" class="popup">
+                  <div class="popup-content">
+                    <img src="https://img.freepik.com/premium-vector/trash-can-logo_609277-204.jpg" style="height: 50px; width: 50px;"  class="img-fluid">
+                  </div>
+                </div>
+          
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Image -->
+      <img src="https://i0.wp.com/sellingsignals.com/wp-content/uploads/2022/01/Example-open-pipe-dashboard-from-Salesforce-Essentials.png" style="height: 300px; width: 400px;" class="img-fluid" alt="Your Image"><br>
+     
+    </div>
+    <div class="col-md-6">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210620051432/progres1-660x353.png" style="height: 300px; width: 400px;" class="img-fluid" alt="Your Image">
+     
+      <p></p>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+ 
+   
+    
+                <div class="container">
                     <div class="table-responsive">
-                        <table class="table table-hover table-nowrap">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Company</th>
-                                    <th scope="col">Offer</th>
-                                    <th scope="col">Meeting</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Robert Fox
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Feb 15, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://preview.webpixels.io/web/img/other/logos/logo-1.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            Dribbble
-                                        </a>
-                                    </td>
-                                    <td>
-                                        $3.500
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-success"></i>Scheduled
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img alt="..." src="https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/z/s/y/xl-plain-cotton-mens-shirt-latest-design-unique-high-quality-new-original-imagrynyzazh28bg.jpeg?q=90&crop=false" class="avatar avatar-sm rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                           Anoop
-                                        </a>
-                                    </td>
-                                    <td>
-                                        Apr 15, 2021
-                                    </td>
-                                    <td>
-                                        <img alt="..." src="https://w7.pngwing.com/pngs/1000/421/png-transparent-wipro-logo-india-information-technology-business-arora-company-text-service-thumbnail.png" class="avatar avatar-xs rounded-circle me-2">
-                                        <a class="text-heading font-semibold" href="#">
-                                            wipro
-                                        </a>
-                                    </td>
-                                    
-                                    <td>
-                                        $2.750
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-lg badge-dot">
-                                            <i class="bg-warning"></i>Postponed
-                                        </span>
-                                    </td>
-                                    <td class="text-end">
-                                        <a href="#" class="btn btn-sm btn-neutral">View</a>
-                                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <div data-role="page">
-                                    <div data-role="header" data-position="fixed">
-                                         <h1>Header</h1>
-                                
-                                    </div>
-                                    <div role="main" class="ui-content">
-                                        <ul data-role="listview">
-                                            <li>Item 1</li>
-                                            <li>Item 2</li>
-                                            <li>Item 3</li>
-                                            <li>Item 4</li>
-                                            <li>Item 5</li>
-                                        </ul>
-                                    </div>
-                                    <div data-role="footer" data-position="fixed" data-theme="a" data-tap-toggle="false">
-                                         <h1>Footer</h1>
-                                
-                                    </div>
-                                </div>
-                               
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>@johnny</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Jane</td>
+                            <td>Doe</td>
+                            <td>@jane</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Mark</td>
+                            <td>Smith</td>
+                            <td>@mark</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+<br>
+<br>
+
+   
+     
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Image -->
+            <img src="https://thumbs.dreamstime.com/b/business-chart-uptrend-line-graph-colorful-bar-chart-d-design-white-color-background-93730068.jpg" class="img-fluid" alt="Your Image">
+          </div>
+          <div class="col-md-6">
+            <!-- Other content here -->
+            <h2>chart</h2>
+            <p>Simplifying the complexity of large sets of data by making them visually organized when presented makes it easier for people to understand and connect with the conclusions that can be drawn from data analysis. In American engineer Willard Cope Brinton's 1914 book, Graphic Methods for Presenting Facts, he stated, "Millions of dollars yearly are spent in the collection of data, with the fond expectation that the data will automatically cause the correction of the conditions studied . . . though accurate data and real facts are valuable, when it comes to getting results the manner of presentation is ordinarily more important than the facts themselves</p>
+          </div>
+        </div>
+      </div>
+      <br>
+   
+     
+    
+
+
+      
+
+      
+
+
+    <script>
+
+
+    
+
+
+
+
+
+    document.querySelectorAll('.card').forEach(card => {
+              card.addEventListener('dragstart', function(e) {
+                  e.dataTransfer.setData('text/plain', card.id);
+                  document.getElementById('popup').style.display = "block"; // Show the popup
+              });
+          });
+      
+          document.getElementById('popup').addEventListener('dragover', function(e) {
+              e.preventDefault();
+          });
+      
+          document.getElementById('popup').addEventListener('drop', function(e) {
+              e.preventDefault();
+              document.getElementById('popup').style.display = "none"; // Hide the popup
+              var data = e.dataTransfer.getData('text/plain');
+              if (data) {
+                  var card = document.getElementById(data);
+                  card.parentNode.removeChild(card); // Remove the dropped card from the page
+              }
+          });
+      
+          document.addEventListener('dragover', function(e) {
+              e.preventDefault();
+          });
+          
+          document.addEventListener('drop', function(e) {
+              e.preventDefault();
+              document.getElementById('popup').style.display = "none"; // Hide the popup
+          });
+
+
+
+
+
+          // Function to retrieve card IDs from the first page and redirect to the second page with item_ids
+          function redirectToSecondPage() {
+              var cardIds = [];
+              document.querySelectorAll('.card').forEach(card => {
+                  var cardId = card.id.replace('draggable', '');
+                  cardIds.push(cardId);
+              });
+              var linkToSecondPage = '{% url "archieve" %}?item_ids=' + cardIds.join(',');
+              window.location.href = linkToSecondPage; // Redirect to the second page with card IDs
+          }
+
+
+
+          document.addEventListener("DOMContentLoaded", function() {
+            const enquiryBox = document.getElementById("enquiry-box");
+            const enquiryLink = document.getElementById("enquiry-link");
+            const closeEnquiryBox = document.getElementById("close-enquiry-box");
+            
+            enquiryLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                enquiryBox.style.display = "block";
+            });
+        
+            closeEnquiryBox.addEventListener("click", function() {
+                enquiryBox.style.display = "none";
+            });
+        });
+
+
+
+
+
+    </script>
+
+
+
+
+  
+<footer style="background-color: #f9f5f5"  class="footer mt-auto py-3  text-center ">
+  <p><b>&copy; 2024 Your Website. All rights reserved.</b></p>
+  <p><b>&copy; crm@gmail.com.</b></p>
+ 
+ 
+  <p class="mt-auto text-black">
+     <b> Phone: +91 9966337780</b>
+     </p>
+</footer> 
 
 {% endblock %}
+
+</body>
+</html>

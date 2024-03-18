@@ -11,6 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/30ecc6e708.js" crossorigin="anonymous"></script>
+  
   <style>
    :root {
     --font-family-sans-serif: "Open Sans", -apple-system, BlinkMacSystemFont,
@@ -44,7 +45,7 @@ body {
     line-height: 1.5;
     color: #515151;
     text-align: left;
-    background-color: #e9edf4;
+    background-color: #4449dd;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -93,7 +94,7 @@ h1, .h1 {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #3a51d4;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0;
@@ -193,11 +194,11 @@ h1, .h1 {
 }
 
 .dashboard-nav {
-    background-color: #ae0aa0;
+    background-color: rgb(54, 87, 208);
 }
 
 .dashboard-nav a {
-    color: #fff;
+    color: #f7f4f4;
 }
 
 .brand-logo {
@@ -375,7 +376,7 @@ h1, .h1 {
 
 .dashboard-toolbar {
     min-height: 84px;
-    background-color: #b10da6;
+    background-color:  rgb(237, 238, 240);
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -464,11 +465,11 @@ h1, .h1 {
         <header><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#"
                                                                                    class="brand-logo"><i
                ></i> <span>oodo</span></a></header>
-        <nav class="dashboard-nav-list"><a href="" class="dashboard-nav-item"><i class="fas fa-home"></i>
+        <nav class="dashboard-nav-list"><a onclick="redirectToFirstPage()" class="dashboard-nav-item"><i class="fa-solid fa-star"></i>
             Dashboard </a><a
-                href="" class="dashboard-nav-item "><i class="fas fa-user"></i> customers
+            onclick="redirectToSecondPage()" class="dashboard-nav-item "><i class="fa fa-archive"></i> Archived
         </a><a
-        href="" class="dashboard-nav-item"><i class="fa-solid fa-plus"></i></i> Report
+        href="{% url 'hello' %}" class="dashboard-nav-item"><i class="fas fa-home"></i> Home
 </a>
 <a
 href="" class="dashboard-nav-item"><i class="fa-solid fa-star"></i> Settings </a>

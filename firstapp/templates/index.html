@@ -19,11 +19,27 @@
     
       body {
         background-image: url("");
-        background-color: rgb(229, 250, 255);
+        background-color: white;
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
       }
+      .card {
+    width: 400px;
+    height:180px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    background-color: #f9f9f9;
+}
+
+.card-header {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.card-details {
+    padding: 10px;
+}
       .text-effect {
       font-family: Arial, sans-serif;
       font-size: 24px;
@@ -31,13 +47,14 @@
       transition: color 0.3s ease; /* Smooth transition for color change */
     }
     .landing-page {
-      padding: 80px 0;
+      padding: 100px 0;
     }
 
     .login-signup-form {
-      background-color: #a21b9e;
+      background-color: #000000;
       padding: 20px;
       border-radius: 8px;
+      color: #faf7fa;
       box-shadow: white;
     }
 
@@ -46,15 +63,57 @@
       color: #ff5733; /* Change the text color on hover */
     }
       .jumbotron {
-            background-color:rgb(115, 3, 106);
-            color: #faf7fa;
+            background-color:rgb(255, 255, 255);
+            color: #000000;
             padding: 100px 25px;
             margin-bottom: 0;
         }
 
-        .search-box {
-            margin-top: 50px;
+        #contact {
+  background-color: rgb(229, 250, 255);
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+.container {
+            text-align: center;
         }
+
+       
         
 </style>
 
@@ -71,18 +130,18 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: purple;"><b>Home </b></a>
+              <a class="nav-link" href="#" style="color: black;"><b>Home </b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" style="color: purple;"><b>Features</b></a>
+              <a class="nav-link" href="#" style="color: black;"><b>Features</b></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'dashboard' %}" style="color: purple;"><b>Dashboard</b>
+              <a class="nav-link" href="{% url 'dashboard' %}" style="color:black;"><b>Dashboard</b>
 
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" style="color: purple;"><b>About</b></a>
+              <a class="nav-link" href="#" style="color: black;"><b>About</b></a>
             </li>
             <!-- Add more navigation items as needed -->
           </ul>
@@ -96,7 +155,7 @@
 
               </li>
               <li class="nav-item">
-                  <a class="nav-link" style="color: purple;" href="{#}"><b>Sign in</b></a>
+                  <a class="nav-link" style="color: black;" href="{#}"><b>Sign in</b></a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="{}"></a>
@@ -111,12 +170,13 @@
 <div class="jumbotron text-center">
   <h1 class="display-4"><b><i> The best CRM software to manage<br> your leads and customers
     </i></b></h1><br>
-  <p class="lead" style="color:white;"><b>Odoo CRM is the true customer-centric tool for your sales needs.</b> </p>
+  <p class="lead" style="color:black;"><b>Odoo CRM is the true customer-centric tool for your sales needs.</b> </p>
  <br>
-  <p style="color:white;">Track leads, get accurate forecasts, and focus on what matters: closing opportunities.</p>
+  <p style="color:black;">Track leads, get accurate forecasts, and focus on what matters: closing opportunities.</p>
  
  
 </div>
+
 <div class="container landing-page">
   <div class="row">
     <div class="col-md-6">
@@ -137,6 +197,7 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane fade show active" id="login">
+            <br>
             <form>
               <div class="form-group">
                 <label for="loginEmail">Email address</label>
@@ -150,6 +211,7 @@
             </form>
           </div>
           <div class="tab-pane fade" id="signup">
+            <br>
             <form>
               <div class="form-group">
                 <label for="signupName">Name</label>
@@ -172,34 +234,91 @@
   </div>
 </div>
 
+<h2 style="text-align: center;"><i>integrates with</i></h2>
 <br>
-<div class="row">
-  <div class="col-md-6 order-md-6">
+<div class="row placeholders">
 
-    <img src="https://www.zohowebstatic.com/sites/zweb/images/crm/smoother-operations-integration-1x.webp" style="height: 400px; width: 500px;" alt="" class="w-100" />
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_640.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>Gmail</h4>
+   
   </div>
-  <!-- /.col-md-6 -->
-  <div class="col-md-6 order-md-1">
-
-    <div class="row align-items-center h-100">
-      <div class="col">
-        <h1 class="display-3" style="color: purple;">Integrate Zoho CRM with over 800+ apps</h1>
-        <p class="lead">Zoho CRM works seamlessly with your favorite apps–or
-          find the right app for your needs at Zoho Marketplace.
-          <br /><br />
-          <a href="" class="">Learn More</a>
-        </p>
-
-      </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="https://img.freepik.com/premium-vector/live-chat-icon-with-speech-bubble-support-service_349999-1231.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>Live chat</h4>
+    
+  </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="https://www.kindpng.com/picc/m/341-3411181_sms-integration-icon-hd-png-download.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>Sms</h4>
+   
+  </div>
+  <div class="col-xs-6 col-sm-3 placeholder">
+    <img src="https://i.pinimg.com/736x/cb/f6/36/cbf63612205f4bc759407b97fbd79073.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+    <h4>Facebook</h4>
+  
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Image -->
+      <img src="https://i0.wp.com/www.sutisoft.com/blog/wp-content/uploads/2023/01/CRM.jpg?fit=640%2C360&ssl=1" style="height: 400px; width: 700px;" class="img-fluid" alt="Your Image"><br>
+     
     </div>
-
+    <div class="col-md-6">
+      <img src="https://www.digitalmarketinglab.fr/wp-content/uploads/2020/08/AdobeStock_249843417-scaled.jpeg" style="height: 400px; width: 700px;" class="img-fluid" alt="Your Image">
+     
+      <p></p>
+    </div>
   </div>
-  <!-- /.col-md-6 -->
-
 </div>
-<!-- /.row -->
+<br>
+<br>
+<section class="container-fluid text-center py-4 mt-4" id="contact">
+  <h2 class="display-4 pb-4 my-4"><b>Get in touch with us today!</b></h2>
+  <p class="lead pb-3"><b>Send us a message and we will get back to 
+  you as soon as possible.</b></p>
+  <a href="#" class="btn btn-primary btn-lg mb-4" role="button">Contact us</a>
+</section>
+<br>
+<br>
+<br>
 
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Image -->
+      <img src="https://thumbs.dreamstime.com/b/crm-customer-relationship-management-business-internet-techology-concept-137888377.jpg" class="img-fluid" alt="Your Image">
+    </div>
+    <div class="col-md-6">
+      <!-- Other content here -->
+      <h2>what is CRM</h2>
+      <p>CRM is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability.
+
+        When people talk about CRM, they usually refer to a CRM system or platform, a tool that helps with contact management, sales management, productivity, and more.
+        
+        CRM software helps you focus on your organisation’s relationships with individual people — including customers, service users, colleagues, or suppliers — throughout your lifecycle with them, including finding new customers, winning their business, and providing support and additional services throughout the relationship.
+        
+        With a CRM solution, the sales and marketing team can track and follow a customer’s interaction journey with your business. This can enhance the customer journey and experience by refining each customer touchpoint.</p>
+    </div>
+  </div>
 </div>
+
+
+<br>
+
+<div class="container">
+  <h1><b>Integrate Zoho CRM with over 800+ apps</b></h1>
+  <p>Zoho CRM works seamlessly with your favorite apps–or find the right app for your needs at Zoho Marketplace.</p>
+  <img src="https://wallpapers.com/images/hd/social-media-apps-u772dzyjbyubra3u.jpg" style="height: 500px; width: 1000px;" alt="Image Description">
+ 
+</div>
+<br>
+<br>
 <br>
 <div class="container">
  
@@ -215,7 +334,7 @@
 
       <div class="row align-items-center h-100">
         <div class="col">
-          <h1 class="display-3" style="color: purple;">THE WORLD'S FAVORITE CRM.
+          <h1 class="display-3" style="color: black;">THE WORLD'S FAVORITE CRM.
             MADE IN INDIA.</h1>
           <p class="lead">Who said world-class software can only be built in Silicon Valley? oodo CRM empowers 250,000+ global businesses to deliver fantastic customer experiences and drive remarkable growth. Made right here in India–try the SaaS from Madras!
             <br /><br />
@@ -243,7 +362,7 @@
 
       <div class="row align-items-center h-100">
         <div class="col">
-          <h1 class="display-3" style="color: purple;">Maximum productivity with minimum use</h1>
+          <h1 class="display-3" style="color: black;">Maximum productivity with minimum use</h1>
           <p class="lead">Automating your workflows, processes, campaigns, customer journeys, and more enables you to focus on building great relationships. Zoho CRM is built to get more done in less time.
             <br /><br />
             <a href="" class="">Learn More</a>
@@ -264,7 +383,7 @@
     <div class="row">
         <div class="col-lg-8">
             <!-- Responsive Image -->
-            <img src="https://odoocdn.com/openerp_website/static/src/img/apps/crm/hero_image.webp" style="height: 450px; width: 650px;"  class="img-fluid" alt="Responsive Image">
+            <img src="https://binmile.com/wp-content/uploads/2022/04/CRM-system-for-business-Binmile.jpg.jpg" style="height: 350px; width: 550px;"  class="img-fluid" alt="Responsive Image">
         </div>
         <div class="col-lg-4">
             <!-- Image Description -->
@@ -284,6 +403,11 @@
     </div>
 </div>
 <br>
+
+
+
+
+
 <h1 class="display-4" style="text-align: center;"><b><i>All The Features<br>Done Right 
   </i></b></h1><br>
 <div class="row">
@@ -297,6 +421,7 @@
     </div>
   </div>
   <br>
+  
   <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
@@ -319,9 +444,10 @@
   </div>
 </div>
 <br>
-<div style="background-color: rgb(9, 7, 134);" class="jumbotron text-center">
+
+<div style="background-color: white;" class="jumbotron text-center">
   
-  <h1 class="display-4" style="color: white;"><b><i>Turn reporting data <br>in to money</i></b></h1><br>
+  <h1 class="display-4" style="color: black;"><b><i>Turn reporting data <br>in to money</i></b></h1><br>
 
  
 </div>
@@ -379,6 +505,7 @@
 </div>
 <br>
 <br>
+
 
 
 <!-- Footer -->
