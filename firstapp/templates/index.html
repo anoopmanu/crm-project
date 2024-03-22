@@ -10,6 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     {% load static %}
     
     <link rel="stylesheet" href="style.css" />
@@ -51,10 +54,10 @@
     }
 
     .login-signup-form {
-      background-color: #000000;
+      background-color:rgb(13, 3, 68);
       padding: 20px;
       border-radius: 8px;
-      color: #faf7fa;
+      color: rgb(248, 246, 246);
       box-shadow: white;
     }
 
@@ -63,8 +66,8 @@
       color: #ff5733; /* Change the text color on hover */
     }
       .jumbotron {
-            background-color:rgb(255, 255, 255);
-            color: #000000;
+            background-color:rgb(8, 4, 54);
+            color: #fbf9f9;
             padding: 100px 25px;
             margin-bottom: 0;
         }
@@ -113,6 +116,200 @@
             text-align: center;
         }
 
+        html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #d0ceff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+input,
+a,
+p,
+li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+header.masthead {
+  position: relative;
+  background: url("https://images.unsplash.com/photo-1511227499331-25c621db940e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80") /*black no-repeat center center scroll*/;
+  background-size: cover;
+  padding-top: 12rem;
+  padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  background-color: #1387FF;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.testimonials .testimonial-item {
+  max-width: 18rem;
+}
+
+.testimonials .testimonial-item img {
+  max-width: 12rem;
+  -webkit-box-shadow: 0px 5px 5px 0px #adb5bd;
+  box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+
+.call-to-action {
+  position: relative;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+
+.video-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn {
+  width: 200px;
+  margin: 0 auto;
+}
+
+
+.call-to-action .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+
+.video-div {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+iframe {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.animated-text {
+      display: inline-block;
+      overflow: hidden;
+      animation: animateText 3s infinite alternate;
+    }
+
+    @keyframes animateText {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(-50px);
+        opacity: 1;
+      }
+    }
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .animated-image {
+      animation: slideIn 1s forwards;
+    }
+    .login-signup-form:hover {
+        transform: scale(1.00);
+    }
+    .col-md-6:hover {
+        transform: scale(1.01);
+    }
+    .nav-item:hover {
+        transform: scale(1.21);
+    }
+    
+    
+    
+    
        
         
 </style>
@@ -170,19 +367,23 @@
 <div class="jumbotron text-center">
   <h1 class="display-4"><b><i> The best CRM software to manage<br> your leads and customers
     </i></b></h1><br>
-  <p class="lead" style="color:black;"><b>Odoo CRM is the true customer-centric tool for your sales needs.</b> </p>
+  <p class="lead" style="color:white;"><b>Odoo CRM is the true customer-centric tool for your sales needs.</b> </p>
  <br>
-  <p style="color:black;">Track leads, get accurate forecasts, and focus on what matters: closing opportunities.</p>
+  <p style="color:white">Track leads, get accurate forecasts, and focus on what matters: closing opportunities.</p>
  
  
 </div>
 
+
 <div class="container landing-page">
   <div class="row">
     <div class="col-md-6">
-      <h1>Effortless communication
-        means no miscommunication
-      </h1>
+    
+      <div class="animated-text">
+        <span><h1>Effortless communication
+          means no miscommunication</h1></span>
+       
+      </div>
      
     </div>
     <div class="col-md-6">
@@ -234,37 +435,31 @@
   </div>
 </div>
 
-<h2 style="text-align: center;"><i>integrates with</i></h2>
 <br>
-<div class="row placeholders">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="https://img.freepik.com/free-vector/flat-design-hard-drive-illustration_23-2149356394.jpg" alt="Animated Image" class="img-fluid animated-image">
+    </div>
+    <div class="col-md-6">
+      <h1>Benifits of CRM</h1>
+      <p>Business is all about relationships, especially relationships with customers. The better your business can manage customer relationships, the more it will grow.
 
-  <div class="col-xs-6 col-sm-3 placeholder">
-    <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_640.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-    <h4>Gmail</h4>
-   
-  </div>
-  <div class="col-xs-6 col-sm-3 placeholder">
-    <img src="https://img.freepik.com/premium-vector/live-chat-icon-with-speech-bubble-support-service_349999-1231.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-    <h4>Live chat</h4>
-    
-  </div>
-  <div class="col-xs-6 col-sm-3 placeholder">
-    <img src="https://www.kindpng.com/picc/m/341-3411181_sms-integration-icon-hd-png-download.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-    <h4>Sms</h4>
-   
-  </div>
-  <div class="col-xs-6 col-sm-3 placeholder">
-    <img src="https://i.pinimg.com/736x/cb/f6/36/cbf63612205f4bc759407b97fbd79073.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-    <h4>Facebook</h4>
-  
+        To be successful, a business must retain its existing costumes and reach out to new customers. This means connecting with customers on multiple channels across many platforms.
+        
+        As you open more channels to reach more customers, managing those relationships and interactions becomes more and more critical. This is where customer relationship management (CRM) becomes essential.</p>
+     
+    </div>
   </div>
 </div>
+<br>
+<br>
 <br>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
       <!-- Image -->
-      <img src="https://i0.wp.com/www.sutisoft.com/blog/wp-content/uploads/2023/01/CRM.jpg?fit=640%2C360&ssl=1" style="height: 400px; width: 700px;" class="img-fluid" alt="Your Image"><br>
+      <img src="https://i0.wp.com/www.sutisoft.com/blog/wp-content/uploads/2023/01/CRM.jpg?fit=640%2C360&ssl=1" style="height: 400px; width: 700px;" alt="Animated Image" class="img-fluid" alt="Your Image"><br>
      
     </div>
     <div class="col-md-6">
@@ -276,235 +471,188 @@
 </div>
 <br>
 <br>
-<section class="container-fluid text-center py-4 mt-4" id="contact">
-  <h2 class="display-4 pb-4 my-4"><b>Get in touch with us today!</b></h2>
-  <p class="lead pb-3"><b>Send us a message and we will get back to 
-  you as soon as possible.</b></p>
-  <a href="#" class="btn btn-primary btn-lg mb-4" role="button">Contact us</a>
+<section style="background-color: #0d0650;"  class="container-fluid text-center py-4 mt-4" id="contact">
+ 
+  <div class="animated-text">
+    <span> <h2 class="display-4 pb-4 my-4" style="color: white;"><b>Get in touch with us today!</b></h2>
+      <p class="lead pb-3" style="color: white;"><b>Send us a message and we will get back to 
+      you as soon as possible.</b></p>
+      <a href="#" class="btn btn-primary btn-lg mb-4" role="button">Contact us</a>
 </section>
-<br>
-<br>
-<br>
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <!-- Image -->
-      <img src="https://thumbs.dreamstime.com/b/crm-customer-relationship-management-business-internet-techology-concept-137888377.jpg" class="img-fluid" alt="Your Image">
-    </div>
-    <div class="col-md-6">
-      <!-- Other content here -->
-      <h2>what is CRM</h2>
-      <p>CRM is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability.
-
-        When people talk about CRM, they usually refer to a CRM system or platform, a tool that helps with contact management, sales management, productivity, and more.
-        
-        CRM software helps you focus on your organisation’s relationships with individual people — including customers, service users, colleagues, or suppliers — throughout your lifecycle with them, including finding new customers, winning their business, and providing support and additional services throughout the relationship.
-        
-        With a CRM solution, the sales and marketing team can track and follow a customer’s interaction journey with your business. This can enhance the customer journey and experience by refining each customer touchpoint.</p>
-    </div>
+    
+    </span>
+   
   </div>
-</div>
-
-
-<br>
-
-<div class="container">
-  <h1><b>Integrate Zoho CRM with over 800+ apps</b></h1>
-  <p>Zoho CRM works seamlessly with your favorite apps–or find the right app for your needs at Zoho Marketplace.</p>
-  <img src="https://wallpapers.com/images/hd/social-media-apps-u772dzyjbyubra3u.jpg" style="height: 500px; width: 1000px;" alt="Image Description">
- 
-</div>
+  
+  
 <br>
 <br>
 <br>
-<div class="container">
- 
-
-  <!--  image left  -->
-  <div class="row">
-    <div class="col-md-6">
-
-      <img src="https://img.freepik.com/free-vector/gradient-crm-illustration_23-2149379653.jpg" style="height: 400px; width: 500px;" alt="" class="w-100" />
-    </div>
-    <!-- /.col-md-6 -->
-    <div class="col-md-6">
-
-      <div class="row align-items-center h-100">
-        <div class="col">
-          <h1 class="display-3" style="color: black;">THE WORLD'S FAVORITE CRM.
-            MADE IN INDIA.</h1>
-          <p class="lead">Who said world-class software can only be built in Silicon Valley? oodo CRM empowers 250,000+ global businesses to deliver fantastic customer experiences and drive remarkable growth. Made right here in India–try the SaaS from Madras!
-            <br /><br />
-            <a href="" class="">Learn More</a>
-          </p>
-
-        </div>
-      </div>
-
-    </div>
-    <!-- /.col-md-6 -->
-
-  </div>
-  <!-- /.row -->
-
-  <!--  image right  -->
-  <br>
-  <div class="row">
-    <div class="col-md-6 order-md-6">
-
-      <img src="https://t3.ftcdn.net/jpg/02/97/99/34/360_F_297993411_5QWxEPbvuA5C9O8O3LHIy0Kz0UYxC1a8.jpg" style="height: 400px; width: 500px;" alt="" class="w-100" />
-    </div>
-    <!-- /.col-md-6 -->
-    <div class="col-md-6 order-md-1">
-
-      <div class="row align-items-center h-100">
-        <div class="col">
-          <h1 class="display-3" style="color: black;">Maximum productivity with minimum use</h1>
-          <p class="lead">Automating your workflows, processes, campaigns, customer journeys, and more enables you to focus on building great relationships. Zoho CRM is built to get more done in less time.
-            <br /><br />
-            <a href="" class="">Learn More</a>
-          </p>
-
-        </div>
-      </div>
-
-    </div>
-    <!-- /.col-md-6 -->
-
-  </div>
-  <!-- /.row -->
-
-</div>
-<br>
-  <div class="container mt-4">
+<section class="features-icons bg-light text-center">
+  <div class="container">
     <div class="row">
-        <div class="col-lg-8">
-            <!-- Responsive Image -->
-            <img src="https://binmile.com/wp-content/uploads/2022/04/CRM-system-for-business-Binmile.jpg.jpg" style="height: 350px; width: 550px;"  class="img-fluid" alt="Responsive Image">
+      <div class="col-lg-4">
+        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="features-icons-icon d-flex">
+            <i class="far fa-grin-wink m-auto text-primary"></i>
+          </div>
+          <h3>Enable automation</h3>
+          <p class="lead mb-0">Automate lead creation, team assignment, scheduled activities, and focus on what really matters.</p>
         </div>
-        <div class="col-lg-4">
-            <!-- Image Description -->
-            <h2>Keep opportunities within view</h2>
-            <br>
-            <h4>Your pipeline at a glance.</h4>
-            <p>
-              Each opportunity is listed as a card with all the essential information; and each stage gives an overview of your expected revenues.
-            </p>
-
-            <h4>Efficient organization</h4>
-            <p>
-              The Kanban view organizes opportunities by stage. Drag and drop them on the pipeline to move them from a stage
-            </p>
+      </div>
+      <div class="col-lg-4">
+        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="features-icons-icon d-flex">
+            <i class="far fa-grin m-auto text-primary"></i>
+          </div>
+          <h3>Reduce manual entry</h3>
+          <p class="lead mb-0">Send quotes in just a few clicks, manage your pipeline by drag-and-dropping, and more.</p>
         </div>
-       
+      </div>
+      <div class="col-lg-4">
+        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+          <div class="features-icons-icon d-flex">
+            <i class="far fa-grin-beam m-auto text-primary"></i>
+          </div>
+          <h3>AI lead scoring</h3>
+          <p class="lead mb-0">Too many leads? Our AI scores leads to ensure you always work on the right priorities.</p>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- Image Showcases -->
+<a name="services"></a>
+<section class="showcase">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://previews.123rf.com/images/mangpor2004/mangpor20041811/mangpor2004181100034/112011610-crm-customer-relationship-management-icon-on-blur-office-background-web-banner-success-in-business.jpg');"></div>
+      <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+        <h2>Maximum productivity with minimum use</h2>
+        <p class="lead mb-0">Automating your workflows, processes, campaigns, customer journeys, and more enables you to focus on building great relationships. Zoho CRM is built to get more done in less time.</p>
+      </div>
+      
+       
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-lg-6 text-white showcase-img" style="background-image: url('https://binmile.com/wp-content/uploads/2022/04/CRM-system-for-business-Binmile.jpg.jpg');"></div>
+      <div class="col-lg-6 my-auto showcase-text">
+        <h2>Keep opportunities within view
+        </h2>
+        <p class="lead mb-0">Your pipeline at a glance.
+          Each opportunity is listed as a card with all the essential information; and each stage gives an overview of your expected revenues.
+          
+          Efficient organization
+          The Kanban view organizes opportunities by stage. Drag and drop them on the pipeline to move them from a stage</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+<br>
+<br>
+<br>
 <br>
 
 
 
 
 
-<h1 class="display-4" style="text-align: center;"><b><i>All The Features<br>Done Right 
-  </i></b></h1><br>
-<div class="row">
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Enable automation</h5>
-        <p class="card-text">Automate lead creation, team assignment, scheduled activities,<br> and focus on what really matters.</p>
-       
-      </div>
-    </div>
-  </div>
-  <br>
-  
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">AI lead scoring</h5>
-        <p class="card-text">Too many leads? Our AI scores leads to ensure<br> you always work on the right priorities.
 
-        </p>
-       
+
+
+
+
+
+
+
+<!-- Testimonials -->
+<a name="about"></a>
+<section class="testimonials text-center bg-light">
+  <div class="container">
+    <h2 class="mb-5">Introduce The Team</h2>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+          <img class="img-fluid rounded-circle mb-3" src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+          <h5>Margaret E.</h5>
+          <p class="font-weight-light mb-0"></p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+          <img class="img-fluid rounded-circle mb-3" src="https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+          <h5>Fred S.</h5>
+          <p class="font-weight-light mb-0"></p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+          <img class="img-fluid rounded-circle mb-3" src="https://images.pexels.com/photos/1172784/pexels-photo-1172784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+          <h5>Sarah W.</h5>
+          <p class="font-weight-light mb-0"></p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card" >
-      <div class="card-body">
-        <h5 class="card-title">Reduce manual entry</h5>
-        <p class="card-text">Send quotes in just a few clicks, manage your<br> pipeline by drag-and-dropping, and more.</p>
+</section>
+
+
+
+<div class="video-div">
+<h3 style="margin-bottom: 2rem;">Embedded Vidoes</h3>
+<div class='embed-container'><iframe width="560" height="315" src="https://www.youtube.com/embed/JGwtVbOz528?si=aCELG2z9ajyU_R62" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div> 
+</div>
+
+<!-- Image Showcases -->
+<a name="services"></a>
+<section class="showcase">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://thumbs.dreamstime.com/b/crm-customer-relationship-management-business-internet-techology-concept-137888377.jpg');"></div>
+      <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+        <h2>what is CRM</h2>
+        <p class="lead mb-0">CRM is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability. When people talk about CRM, they usually refer to a CRM system or platform, a tool that helps with contact management, sales management, productivity, and more.</p>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-lg-6 text-white showcase-img" style="background-image: url('https://www.netsolutions.com/insights/wp-content/uploads/2021/10/how-a-crm-Can-improve-your-customer-experience-the-7-best-crm-software-platforms-of-2021.jpg');"></div>
+      <div class="col-lg-6 my-auto showcase-text">
+        <h2>Better customer service
+        </h2>
+        <p class="lead mb-0">Modern CRM software has many functions, but the software was created to improve business-customer relationships and that’s still its main benefit. A CRM manages all of your contacts and gathers important customer information ― like demographics, purchase records and previous messages across all channels ― and makes it accessible easily to anyone in your company who needs it. This ensures that your employees have all they need to know about the customer at their fingertips and can provide a better customer experience, which tends to boost customer satisfaction.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Call to Action -->
+<section class="call-to-action text-white text-center" id="foo" style="background-color: #fff;">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto" style="color: black;">
+        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+        <p class="mb-4" style="font-size: 1.5rem">This is some persuasive text to make you...</p>
+      </div>
+      
+            <div class="col-12 col-md-12">
+              <a href="#"><button type="button" class="btn btn-block btn-lg btn-primary">Sign up!</button></a>
+            </div>
         
-      </div>
     </div>
   </div>
-</div>
-<br>
+</section>
 
-<div style="background-color: white;" class="jumbotron text-center">
-  
-  <h1 class="display-4" style="color: black;"><b><i>Turn reporting data <br>in to money</i></b></h1><br>
-
- 
-</div>
-
-
-
-
-
-
-<br>
-
-<br>
-<div class="container mt-4" >
-  <div class="row">
-      <div class="col-lg-12">
-          <!-- Heading with Tick -->
-         
-
-          <!-- Paragraphs with Tick Marks -->
-          <ul class="list-group">
-               <h2 style="text-align: center;"></style>
-              why choose oodo crm?
-             
-              
-          </h2>
-          <br>
-              <li class="list-group-item">
-                  <span class="badge badge-primary">&#10003;</span>
-                  Refreshingly simple to use—a modern CRM for a modern business
-              </li>
-              <li class="list-group-item">
-                  <span class="badge badge-primary">&#10003;</span>
-                  Extensive developer platform for custom solutions and integrations
-              </li>
-              <li class="list-group-item">
-                  <span class="badge badge-primary">&#10003;</span>
-                  No hidden costs—we don't nickel and dime features
-              </li>
-              <li class="list-group-item">
-                  <span class="badge badge-primary">&#10003;</span>
-                  Dedicated programs for migration, deployment, and training
-              </li>
-              <li class="list-group-item">
-                  <span class="badge badge-primary">&#10003;</span>
-                  Flexible contracts with no lock-in periods
-              </li>
-              <li class="list-group-item">
-                  <span class="badge badge-primary">&#10003;</span>
-                  Price protection–get the best deal, always
-              </li>
-              <!-- Add more paragraphs as needed -->
-          </ul>
-      </div>
-  </div>
-</div>
-<br>
-<br>
 
 
 
@@ -599,7 +747,20 @@
     
 
   
-
+    <script src="../../assets/vendor/aos/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    <script>
+       $(document).on('ready', function () {
+    // initialization of aos
+    AOS.init({
+      duration: 650,
+      once: true
+    });
+  });
+    </script>
 </body>
 </html>
     

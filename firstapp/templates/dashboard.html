@@ -17,7 +17,7 @@
     <br>
     <style>
           body {
-      background-color: rgb(229, 250, 255);
+      background-color:rgb(205, 205, 205);
   padding: 20px;
 }
       
@@ -27,14 +27,13 @@
         }
 
         .card {
-            height: 150px;
-            width: 200px;
+            height: 200px;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s;
-          
            
         }
+
 
        
 
@@ -105,6 +104,26 @@
       width: 100%;
       height: auto;
     }
+    .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  .card:hover {
+        transform: scale(1.15);
+    }
+  .card-body {
+    padding: 20px;
+  }
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .card-text {
+    font-size: 1.2rem;
+    color: #555;
+  }
 
 
 
@@ -131,7 +150,9 @@
                             <br>
                             <br>
                             <h1 class="h2 mb-0 ls-tight">Dashboard</h1>
+                            
                         </div>
+                        
                         <!-- Actions -->
                         <div class="col-sm-6 col-12 text-sm-end">
                             <div class="mx-n1">
@@ -167,12 +188,85 @@
         </header>
         <br>
         <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                  <h5 class="card-title" style="color: white;">Sales</h5>
+                  <p class="card-text" style="color: white;">View sales performance and trends.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                  <h5 class="card-title"style="color: white;" >Customers</h5>
+                  <p class="card-text"style="color: white;">Manage customer information and relationships.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                  <h5 class="card-title"style="color: white;">Reports</h5>
+                  <p class="card-text"style="color: white;">Generate and analyze reports .</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                  <h5 class="card-title"style="color: white;">Tasks</h5>
+                  <p class="card-text"style="color: white;">Assign and track tasks for your team.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                  <h5 class="card-title"style="color: white;">Contacts</h5>
+                  <p class="card-text"style="color: white;">Manage contact information and communications.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card">
+                <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                  <h5 class="card-title"style="color: white;">Analytics</h5>
+                  <p class="card-text"style="color: white;">Track key performance metrics .</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Image -->
+              <img src="https://static.infragistics.com/marketing/reveal/solutions/crm-analytics/reveal-embedded-analytics-Gillink-dashboard-768.jpg" class="img-fluid" alt="Your Image">
+            </div>
+            <div class="col-md-6">
+              <!-- Other content here -->
+              <h2>Sales</h2>
+              <p>A sale is a transaction between two or more parties in which goods or services are exchanged for money or other assets.
+                In the financial markets, a sale is an agreement between a buyer and seller establishing the price of a security and its delivery for agreed-upon compensation.
+                An item or service transferred by one party to another without an exchange of payment is not considered a sale but rather a gift or a donation.
+                Sales occur 24 hours a day, across the globe in all industries and are the essential component of commerce.
+                A sale can also refer to the reduction in the price of a product or service in an attempt to attract more buyers.</p>
+            </div>
+          </div>
+        </div>
+        <br>
+        
+        
         <div class="container mt-4">
           <div class="row">
           
             <div class="col-md-4">
               <div class="card">
-                <img src="https://www.scnsoft.com/blog-pictures/crm-pics/top-crm-market-statistics_02-customer-engagement-platforms.png" style="height: 150px; width: 250px;" class="card-img-top" alt="Image">
+                <img src="https://www.scnsoft.com/blog-pictures/crm-pics/top-crm-market-statistics_02-customer-engagement-platforms.png" style="height: 200px; width: 345x;" class="card-img-top" alt="Image">
                 <div class="card-body">
                  
                 </div>
@@ -181,7 +275,7 @@
           
             <div class="col-md-4">
               <div class="card">
-                <img src="https://www.superoffice.com/globalassets/blog/2014/3/crm-software-revenue-forecast-2017.png" style="height: 150px; width: 250px;" class="card-img-top" alt="Image">
+                <img src="https://www.superoffice.com/globalassets/blog/2014/3/crm-software-revenue-forecast-2017.png" style="height: 200px; width: 345x;" class="card-img-top" alt="Image">
                 <div class="card-body">
                  
                 </div>
@@ -190,7 +284,7 @@
            
             <div class="col-md-4">
               <div class="card">
-                <img src="https://www.superoffice.com/globalassets/blog/2014/3/most-important-crm-feature-2017.png" style="height: 150px; width: 250px;" class="card-img-top" alt="Image">
+                <img src="https://www.superoffice.com/globalassets/blog/2014/3/most-important-crm-feature-2017.png" style="height: 200px; width: 345x;" class="card-img-top" alt="Image">
                 <div class="card-body">
                  
                 </div>
@@ -202,15 +296,18 @@
         </div>
         <br>
         <br>
+        <h2 style="text-align: center;">Flow chart and graph</h2>
+        <br>
         <div class="container">
           <div class="row">
             <div class="col-md-6">
               <!-- Image -->
-              <img src="https://knowledge.carolina.com/wp-content/uploads/2021/08/graph_3068300.jpg" style="height: 300px; width: 400px;" class="img-fluid" alt="Your Image"><br>
+              <img src="https://stevesnoderedguide.com/wp-content/uploads/chart-csv-file.jpg" style="height: 400px; width: 900px;" class="img-fluid" alt="Your Image"><br>
              
             </div>
+            <br>
             <div class="col-md-6">
-              <img src="https://www.slideteam.net/wp/wp-content/uploads/2016/08/cONSTRUCTION-dASHBOARD.png" style="height: 300px; width: 400px;" class="img-fluid" alt="Your Image">
+              <img src="https://support.goldensoftware.com/hc/article_attachments/360042929614" style="height: 400px; width: 900px;" class="img-fluid" alt="Your Image">
              
               <p></p>
             </div>
@@ -221,9 +318,14 @@
         <br>
       
         <!-- Bootstrap JS (optional, if you need dropdowns, modals, etc.) -->
+        <br>
+        <br>
+    
        
       
         <main class="py-6 bg-surface-secondary">
+          <h2 style="text-align: center;">Smart marketing</h2>
+          <br>
             <div class="container-fluid">
               
                 <!-- Card stats -->
@@ -236,26 +338,10 @@
                     <div class="col-sm-3 mb-3">
                       <div id="draggable1" class="card" draggable="true" >
                         <div class="side front" >
-                          <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                  
-                                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">Work load</span>
-                                    <span class="h3 font-bold mb-0">95%</span>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
-                                        <i class="bi bi-minecart-loaded"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-2 mb-0 text-sm">
-                                <span class="badge badge-pill bg-soft-success text-success me-2">
-                                    <i class="bi bi-arrow-up me-1"></i>10%
-                                </span>
-                                <span class="text-nowrap text-xs text-muted">Since last month</span>
-                            </div>
-                        </div>
+                            <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                                <h5 class="card-title"style="color: white;">Marketing automation</h5>
+                                <p class="card-text"style="color: white;">CRM tools with marketing automation  </p>
+                              </div>
                    
                      
                         </div>
@@ -270,12 +356,10 @@
                     <div class="col-sm-3 mb-3">
                       <div id="draggable2" class="card" draggable="true" >
                         <div class="side front">
-                        <div class="card-body">
-                          <h5 class="text-center">New project</h5>
-                          <h6 class="text-center">215</h6>
-                          <h6 class="text-center">since last month</h6>
-                        
-                        </div>
+                            <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                                <h5 class="card-title"style="color: white;">Sales force automation</h5>
+                                <p class="card-text"style="color: white;">These tools track customer interactions </p>
+                              </div>
                         </div>
                         
                       </div>
@@ -286,12 +370,10 @@
                     <div class="col-sm-3 mb-3">
                       <div id="draggable3" class="card" draggable="true">
                         <div class="side front">
-                        <div class="card-body">
-                          <h5 class="text-center">Total hours</h5>
-                          <h6 class="text-center">1.400</h6>
-                          <h6 class="text-center">since last month</h6>
-                        
-                        </div>
+                            <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                                <h5 class="card-title"style="color: white;">Workflow automation</h5>
+                                <p class="card-text"style="color: white;">CRM systems help companies optimize</p>
+                              </div>
                         </div>
                        
                       </div>
@@ -303,12 +385,10 @@
                   <div class="col-sm-3 mb-3">
                     <div id="draggable4" class="card" draggable="true">
                       <div class="side front">
-                      <div class="card-body">
-                        <h5 class="text-center">Budget</h5>
-                        <h6 class="text-center">Price : ₹750</h6>
-                        <h6 class="text-center">since last month</h6>
-                    
-                      </div>
+                        <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                            <h5 class="card-title"style="color: white;">Lead management</h5>
+                            <p class="card-text"style="color: white;">Sales leads can be tracked through a CRM platform</p>
+                          </div>
                       </div>
                     
                   </div>
@@ -490,7 +570,7 @@
 
 
   
-<footer style="background-color: #f9f5f5"  class="footer mt-auto py-3  text-center ">
+<footer style="background-color:rgb(205, 205, 205);"  class="footer mt-auto py-3  text-center ">
   <p><b>&copy; 2024 Your Website. All rights reserved.</b></p>
   <p><b>&copy; crm@gmail.com.</b></p>
  

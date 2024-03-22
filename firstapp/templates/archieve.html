@@ -21,14 +21,13 @@
   padding: 20px;
 }
 
-        .card {
-            height: 150px;
-            width: 200px;
+.card {
+            height: 200px;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s;
-          
-           
+            border-color: black;
+            border-radius: 10px;
         }
 
         html {
@@ -38,39 +37,26 @@
         body {
                 margin-bottom: 0px; /* Height of the footer */
             }
-      
-  
-      
-
-
-
     </style>
     
     
   </head>
   <body>
-    
-
-      
-
       
 
     <div class="container mt-3 mb-3 p-3">
-     <h3 style="text-align: center;">Archieved</h3>
-     <br>
-     <br>
-   
-   
-     <br>
+      <h3 style="text-align: center;" ><b>Archieve</b></h3>
+
         <div class="row">
             
                 {% if '1' not in item_ids %}
                 <div class="col-sm-3 mt-3">
                 <div id="card{{ '1' }}" class="card">
                     
-                  <div class="card-body">
-                    <h5 class="text-center">workload</h5>
-                    <h6 class="text-center">95%</h6>
+                  <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                    <h5 class="card-title"style="color: white;">Marketing automation</h5>
+                    <p class="card-text"style="color: white;">CRM tools with marketing automation </p>
+                  <br>
                     <div class="text-center">
                       <button class="undoButton btn btn-primary" data-item-id="{{ '1' }}">undo</button>
                     </div>
@@ -87,9 +73,10 @@
                 <div class="col-sm-3 mt-3">
                 <div id="card{{ '2' }}" class="card">
                     
-                  <div class="card-body">
-                    <h5 class="text-center">New project</h5>
-                    <h6 class="text-center">215</h6>
+                  <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                    <h5 class="card-title"style="color: white;">Sales force automation</h5>
+                    <p class="card-text"style="color: white;">These tools track customer interactions </p>
+                <br>
                     <div class="text-center">
                       <button class="undoButton btn btn-primary" data-item-id="{{ '2' }}">undo</button>
                     </div>
@@ -99,14 +86,14 @@
                 </div>
                 </div>
                 {% endif %}
-
                 {% if '3' not in item_ids %}
                 <div class="col-sm-3 mt-3">
                 <div id="card{{ '3' }}" class="card">
                     
-                  <div class="card-body">
-                    <h5 class="text-center">Total hours</h5>
-                    <h6 class="text-center">1.400</h6>
+                  <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                    <h5 class="card-title"style="color: white;">Workflow automation</h5>
+                    <p class="card-text"style="color: white;">CRM systems help companies optimize</p>
+                <br>
                     <div class="text-center">
                       <button class="undoButton btn btn-primary" data-item-id="{{ '3' }}">undo</button>
                     </div>
@@ -116,14 +103,14 @@
                 </div>
                 </div>
                 {% endif %}
-
                 {% if '4' not in item_ids %}
                 <div class="col-sm-3 mt-3">
                 <div id="card{{ '4' }}" class="card">
                     
-                  <div class="card-body">
-                    <h5 class="text-center">Budget</h5>
-                    <h6 class="text-center">Price : ₹750</h6>
+                  <div class="card-body" style="background-color: rgb(1, 1, 50);">
+                    <h5 class="card-title"style="color: white;">Lead management</h5>
+                    <p class="card-text"style="color: white;">Sales leads can be tracked through a CRM platform</p>
+                  <br>
                     <div class="text-center">
                       <button class="undoButton btn btn-primary" data-item-id="{{ '4' }}" >undo</button>
                     </div>
