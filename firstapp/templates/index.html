@@ -19,9 +19,10 @@
     <title>oodo</title>
     <style>
       
+      
     
       body {
-        background-image: url("");
+        background-image: url("https://t3.ftcdn.net/jpg/03/57/76/24/360_F_357762401_Q6IYG6rSR6yoy2mnBsOF3ZtuYVzBNARe.jpg");
         background-color: white;
         background-size: cover;
         background-repeat: no-repeat;
@@ -306,6 +307,137 @@ iframe {
     .nav-item:hover {
         transform: scale(1.21);
     }
+    .showcase-text:hover {
+        transform: scale(1.31);
+    }
+    
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* CSS RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+
+  overflow-x: hidden;
+  background-color: #080202;
+  color: #000000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+p {
+  margin: 20px 0;
+  font-size: 20px;
+  line-height: 2;
+  font-weight: 200;
+}
+
+
+img {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* CLASS STYLES */
+.main-section {
+  padding: 70px 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.img_container {
+  width: 100%;
+  height: 80vh;
+}
+
+.img_container img,
+.tWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.anime_img {
+  object-fit: cover;
+  animation: img_key linear forwards;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 40%;
+}
+
+.top_img {
+  position: relative;
+}
+
+.top_img img {
+  position: absolute;
+  z-index: -1;
+  animation: fade-out linear forwards;
+  /* animation-timeline that connects animation to scroll */
+  animation-timeline: view();
+  animation-range: exit;
+  top: 0px;
+}
+
+.img_container.top_img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+section .tWrap {
+  perspective: 1000px;
+}
+
+.box {
+  animation: noTransformAnim linear forwards normal;
+  animation-timeline: view();
+  transform: rotateX(40deg);
+  opacity: 0;
+}
+
+@keyframes noTransformAnim {
+  50% { transform: none; opacity: 1; }
+  100% { transform: none; opacity: 1; }
+}
+
+@keyframes img_key {
+  0% { clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+@keyframes fade-out {
+  100% { opacity: 0; scale: 1.5; }
+}
+.effect {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.effect.show {
+  opacity: 1;
+}
+
+
+    
     
     
     
@@ -318,7 +450,7 @@ iframe {
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#"></a>
-      <img src="https://i.pinimg.com/originals/ff/a8/86/ffa886510d346aeecc8415ff6f817467.jpg" style="height: 70px; width: 90px;" alt="Logo">
+      <img src="https://media2.giphy.com/media/iOySz58QKya9Q9cVgj/giphy.gif?cid=6c09b9525u246amb74llvn6vqxuytu9kv46kenbqremwjdlz&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=ts" style="height: 70px; width: 90px;" alt="Logo">
      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -365,7 +497,7 @@ iframe {
   </nav>
 
 <div class="jumbotron text-center">
-  <h1 class="display-4"><b><i> The best CRM software to manage<br> your leads and customers
+  <h1 class="display-4" ><b><i> The best CRM software to manage<br> your leads and customers
     </i></b></h1><br>
   <p class="lead" style="color:white;"><b>Odoo CRM is the true customer-centric tool for your sales needs.</b> </p>
  <br>
@@ -374,6 +506,7 @@ iframe {
  
 </div>
 
+<div id="background-animation"></div>
 
 <div class="container landing-page">
   <div class="row">
@@ -386,8 +519,12 @@ iframe {
       </div>
      
     </div>
+    
     <div class="col-md-6">
+      <div class="img_container anime_img" style="margin: 25px 0">
+      
       <div class="login-signup-form">
+       
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login">Login</a>
@@ -404,6 +541,7 @@ iframe {
                 <label for="loginEmail">Email address</label>
                 <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
               </div>
+            
               <div class="form-group">
                 <label for="loginPassword">Password</label>
                 <input type="password" class="form-control" id="loginPassword" placeholder="Password">
@@ -434,27 +572,14 @@ iframe {
     </div>
   </div>
 </div>
-
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <img src="https://img.freepik.com/free-vector/flat-design-hard-drive-illustration_23-2149356394.jpg" alt="Animated Image" class="img-fluid animated-image">
-    </div>
-    <div class="col-md-6">
-      <h1>Benifits of CRM</h1>
-      <p>Business is all about relationships, especially relationships with customers. The better your business can manage customer relationships, the more it will grow.
-
-        To be successful, a business must retain its existing costumes and reach out to new customers. This means connecting with customers on multiple channels across many platforms.
-        
-        As you open more channels to reach more customers, managing those relationships and interactions becomes more and more critical. This is where customer relationship management (CRM) becomes essential.</p>
-     
-    </div>
-  </div>
 </div>
+
 <br>
+
+
 <br>
-<br>
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -488,50 +613,61 @@ iframe {
 <br>
 <br>
 <br>
-<section class="features-icons bg-light text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-          <div class="features-icons-icon d-flex">
-            <i class="far fa-grin-wink m-auto text-primary"></i>
+<div class="img_container anime_img" style="margin: 25px 0">
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="far fa-grin-wink m-auto text-primary"></i>
+            </div>
+            
+            
+            <h3>Enable automation</h3>
+            <p class="lead mb-0">Automate lead creation, team assignment, scheduled activities, and focus on what really matters.</p>
           </div>
-          <h3>Enable automation</h3>
-          <p class="lead mb-0">Automate lead creation, team assignment, scheduled activities, and focus on what really matters.</p>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-          <div class="features-icons-icon d-flex">
-            <i class="far fa-grin m-auto text-primary"></i>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="far fa-grin m-auto text-primary"></i>
+            </div>
+            <h3>Reduce manual entry</h3>
+            <p class="lead mb-0">Send quotes in just a few clicks, manage your pipeline by drag-and-dropping, and more.</p>
           </div>
-          <h3>Reduce manual entry</h3>
-          <p class="lead mb-0">Send quotes in just a few clicks, manage your pipeline by drag-and-dropping, and more.</p>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-          <div class="features-icons-icon d-flex">
-            <i class="far fa-grin-beam m-auto text-primary"></i>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="far fa-grin-beam m-auto text-primary"></i>
+            </div>
+            <h3>AI lead scoring</h3>
+            <p class="lead mb-0">Too many leads? Our AI scores leads to ensure you always work on the right priorities.</p>
           </div>
-          <h3>AI lead scoring</h3>
-          <p class="lead mb-0">Too many leads? Our AI scores leads to ensure you always work on the right priorities.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+</div>
+
+
 
 <!-- Image Showcases -->
 <a name="services"></a>
+
 <section class="showcase">
   <div class="container-fluid p-0">
     <div class="row no-gutters">
       <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://previews.123rf.com/images/mangpor2004/mangpor20041811/mangpor2004181100034/112011610-crm-customer-relationship-management-icon-on-blur-office-background-web-banner-success-in-business.jpg');"></div>
       <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-        <h2>Maximum productivity with minimum use</h2>
-        <p class="lead mb-0">Automating your workflows, processes, campaigns, customer journeys, and more enables you to focus on building great relationships. Zoho CRM is built to get more done in less time.</p>
-      </div>
+        
+          <h2>Maximum productivity with minimum use</h2>
+        <p class="effect">Automating your workflows, processes, campaigns, customer journeys, and more enables you to focus on building great relationships. Zoho CRM is built to get more done in less time.</p>
+     
+       
+        </div>
       
        
       </div>
@@ -760,6 +896,34 @@ iframe {
       once: true
     });
   });
+  // Custom JavaScript for Background Animation
+$(document).ready(function(){
+  animateBackground();
+});
+
+function animateBackground() {
+  const colors = ['#ff6347', '#ff69b4', '#add8e6', '#7fffd4', '#f08080']; // Example colors, you can use any colors you like
+  const bgElement = document.getElementById('background-animation');
+
+  setInterval(function(){
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    bgElement.style.backgroundColor = randomColor;
+  }, 2000); // Change color every 2 seconds (2000 milliseconds)
+}
+$(document).ready(function() {
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    // Adjust the scroll value according to your needs
+    if (scroll > 100) {
+      $('.effect').addClass('show');
+    } else {
+      $('.effect').removeClass('show');
+    }
+  });
+});
+
+
     </script>
 </body>
 </html>
